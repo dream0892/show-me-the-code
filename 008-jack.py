@@ -1,3 +1,5 @@
+#取出HTML页面正文
+
 from bs4 import BeautifulSoup
 import requests
 

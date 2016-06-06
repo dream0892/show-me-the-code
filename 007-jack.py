@@ -5,6 +5,7 @@ import re
 CODE_PATH = os.path.join('.','testcount')
 #pdb.set_trace()
 '''
+        统计总共写了多少行代码
         这是大块的注释，用来测试是不是好用
         re.match(r'^[[\s\t]*[\'\'\']|[\s\t]*[\"\"\"]].line)
 '''

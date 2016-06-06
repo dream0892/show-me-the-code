@@ -29,6 +29,7 @@ def create_identifying_code(strs, width=400, height=200, chance=2):
                 draw.point((w, h), fill=colorRandom())
 
     font = ImageFont.truetype(Image_Font, 80)
+    fontsize=fot.getsize()
     font_width, font_height = font.getsize(strs)
     strs_len = len(strs)
     x = (width - font_width)/2

@@ -1,3 +1,5 @@
+#取出HTML中的所有连接地址 
+
 from bs4 import BeautifulSoup
 import requests
 
