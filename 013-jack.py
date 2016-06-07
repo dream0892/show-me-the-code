@@ -1,3 +1,4 @@
+#导出贴吧大图
 from bs4 import BeautifulSoup
 from urllib import request
 import ssl
