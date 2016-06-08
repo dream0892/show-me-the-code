@@ -3,10 +3,10 @@
 import json
 import pyexcel
 import pdb
-f=open('student.txt')
+f=open('numbers.txt')
 d_student=json.load(f)
 #pdb.set_trace()
-sheet=pyexcel.get_sheet(adict=d_student)
+sheet=pyexcel.get_sheet(array=d_student)
 sheet.name='student'
 sheet.transpose()
-sheet.save_as('student.xls')
+sheet.save_as('numbers.xls')
