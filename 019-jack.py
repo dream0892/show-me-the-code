@@ -5,15 +5,16 @@ import json
 import pyexcel
 import pdb
 import logging
-sheet=pyexcel.get_sheet(file_name='city.xls')
+sheet=pyexcel.get_sheet(file_name='numbers.xls')
 sheet.transpose()
-sheet.name_columns_by_row(0)
-st_dict=pyexcel.utils.to_dict(sheet)
+#sheet.name_columns_by_row(0)
+#st_dict=pyexcel.utils.to_dict(sheet)
+st_dict=sheet.to_array()
 root=ET.Element('root')
-students=ET.SubElement(root,'citys')
-students.append(ET.Comment(u'''-----城市信息-----'''))
+students=ET.SubElement(root,'numbers')
+students.append(ET.Comment(u'''-----数字信息-----'''))
 print(st_dict)
 students.text=json.dumps(st_dict,ensure_ascii=False,indent=4)
 
 st_xml=ET.ElementTree(root)
-st_xml.write('city.xml',  xml_declaration=True, encoding='utf-8')
+st_xml.write('numbers.xml',  xml_declaration=True, encoding='utf-8')
