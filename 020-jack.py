@@ -1,6 +1,7 @@
 from bs4 import BeautifulSoup
 import pdb
 import re
+import pyexcel
 f=open('../fee_talk.html')
 html_doc=f.read()
 soup=BeautifulSoup(html_doc,"lxml")
@@ -17,12 +18,12 @@ for i in soup.find_all('th'):
 for i in soup.find_all('td'):
         content.append(i.text)
 
-#item.append(title)
-m=0
-for j in range(len(content)//int(column)):   
-    item.append(content[m:m+7])
-    m=m+7
-#pdb.set_trace()
+
+for j in range(0,len(content)//int(column),7):   
+    item.append(content[j:j+7])
+    #item.append(title)
+sheet=pyexcel.get_sheet(array=item)
+sheet.save_as('talk.xls')
 for j in item:
     if re.search('主叫',j[2]):
         h,m,s=j[4].split(':')
